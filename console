@@ -1,2 +1,17 @@
 Setoption114 1
 SwitchMode1 2
+
+rule1 on Switch1#state do publish button_test_bruh %value% endon
+
+DINING
+rule1 on Switch1#state=1 do publish light_dining/state ON endon
+
+rule1 + on Switch1#state=0 do publish light_dining/state OFF endon
+
+KITCHEN
+rule1 + on Switch2#state=1 do publish kitchen_switch/state ON endon on Switch2#state=0 do publish kitchen_switch/state OFF endon
+
+HALLWAY
+rule1 + on Switch3#state=1 do publish light_hallway/state ON endon on Switch3#state=0 do publish light_hallway/state OFF endon
+
+rule2 ON System#Boot do led1 100,50,100 endon ON System#Boot do led2 100,50,100 endon ON System#Boot do led3 100,50,100 endon
