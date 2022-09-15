@@ -15,3 +15,10 @@ HALLWAY
 rule1 + on Switch3#state=1 do publish light_hallway/state ON endon on Switch3#state=0 do publish light_hallway/state OFF endon
 
 rule2 ON System#Boot do led1 100,50,100 endon ON System#Boot do led2 100,50,100 endon ON System#Boot do led3 100,50,100 endon
+
+rule1 on Switch1#state=1 do publish master_bathrooom_switch_248/fan_bathroom_245/state ON endon
+ on Switch1#state=0 do publish master_bathrooom_switch_248/fan_bathroom_245/state OFF endon
+ on Switch2#state=1 do publish master_bathrooom_switch_248/light_bathroom_246/state ON endon
+ on Switch2#state=0 do publish master_bathrooom_switch_248/light_bathroom_246/state OFF endon
+ on Switch3#state=1 do publish master_bathrooom_switch_248/light_bathroom_247/state ON endon
+ on Switch3#state=0 do publish master_bathrooom_switch_248/light_bathroom_247/state OFF endon
